@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Do Rzeczy · Tom 2 · Komendy</title>
+  <title>AI Made Simple · Book 2 · Ready-to-Copy Prompts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -52,9 +52,11 @@
       z-index: 999;
       background: var(--navy);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 24px;
+      overflow-y: auto;
     }
 
     .login-box {
@@ -183,6 +185,73 @@
       font-size: 0.78rem;
       color: #475569;
       margin-top: 16px;
+    }
+
+    .upsell-block {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .upsell-label {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      background: rgba(249,115,22,0.1);
+      border: 1px solid rgba(249,115,22,0.25);
+      border-radius: 5px;
+      padding: 2px 9px;
+      margin-bottom: 10px;
+    }
+
+    .upsell-block p {
+      font-size: 0.88rem;
+      color: #CBD5E1;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .upsell-block p strong {
+      color: var(--white);
+    }
+
+    .btn-amazon {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-amazon:hover {
+      background: #ea6c0a;
+      box-shadow: 0 0 18px rgba(249,115,22,0.4);
+    }
+
+    .amazon-disclaimer {
+      margin: 16px auto 0;
+      padding: 12px 18px;
+      background: rgba(37,99,235,0.06);
+      border: 1px solid rgba(37,99,235,0.15);
+      border-radius: 8px;
+      font-size: 0.78rem;
+      color: #64748B;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
     }
 
     /* ── GŁÓWNA TREŚĆ (ukryta domyślnie) ── */
@@ -498,6 +567,157 @@
     .footer-tom-link.coming:hover { border-color: rgba(37,99,235,0.3); color: #93C5FD; }
     .footer-copy { font-size: 0.78rem; color: #475569; }
 
+    /* ── NEWSLETTER & REVIEW SECTIONS ── */
+    .bonus-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bonus-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 36px;
+      margin-bottom: 20px;
+    }
+
+    .bonus-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .bonus-card-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .bonus-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .bonus-card p {
+      font-size: 0.9rem;
+      color: #CBD5E1;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .bonus-card p small {
+      color: #475569;
+      font-size: 0.78rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      min-width: 200px;
+      background: var(--navy-inner);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 11px 16px;
+      font-size: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .newsletter-input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+    }
+
+    .newsletter-input::placeholder { color: #475569; }
+
+    .btn-newsletter {
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 22px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: background 0.15s, box-shadow 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-newsletter:hover {
+      background: var(--blue-light);
+      box-shadow: 0 0 16px rgba(37,99,235,0.35);
+    }
+
+    .review-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--orange);
+      border-radius: 14px;
+      padding: 32px 36px;
+      text-align: center;
+    }
+
+    .review-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .review-card p {
+      font-size: 0.9rem;
+      color: #CBD5E1;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .review-card p .highlight {
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    .review-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-review {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-review:hover {
+      background: #ea6c0a;
+      box-shadow: 0 0 16px rgba(249,115,22,0.4);
+    }
+
     @media (max-width: 540px) {
       header { padding: 40px 16px 32px; }
       .login-box { padding: 36px 24px; }
@@ -508,113 +728,535 @@
 </head>
 <body>
 
-<!-- ══ EKRAN LOGOWANIA ════════════════════════════════════════════════════ -->
+<!-- ══ ACCESS SCREEN ═══════════════════════════════════════════════════ -->
 <div id="ekran-logowania">
   <div class="login-box">
-    <div class="login-badge">Tom 2 · AI Do Rzeczy</div>
-    <h1>Kod dostępu</h1>
-    <p>Wpisz kod z ostatniej strony e-booka<br><strong>AI Do Rzeczy — Tom 2</strong></p>
+    <div class="login-badge">Book 2 · AI Made Simple</div>
+    <h1>Access code</h1>
+    <p>Enter the code from the last page of your e-book<br><strong>AI Made Simple — Book 2</strong></p>
     <input
       type="text"
       id="kod-input"
       class="kod-input"
-      placeholder="TOM2-XXXX"
-      maxlength="9"
+      placeholder="BOOK2-XXXX"
+      maxlength="10"
       autocomplete="off"
       spellcheck="false"
     >
     <div class="error-msg" id="error-msg"></div>
-    <button class="btn-odblokuj" onclick="sprawdzKod()">🔓 Odblokuj komendy</button>
-    <p class="login-hint">Kod znajdziesz na ostatniej stronie e-booka</p>
+    <button class="btn-odblokuj" onclick="sprawdzKod()">🔓 Unlock prompts</button>
+    <p class="login-hint">Your code is on the last page of the e-book</p>
+
+    <div class="upsell-block">
+      <span class="upsell-label">🔒 What's inside</span>
+      <p>Unlock <strong>50 ready-to-copy AI prompts</strong> for organisation &amp; planning — weekly schedules, task prioritisation, meeting prep, delegation, and more. This companion page makes copying them effortless.<br><br>Don't have Book 2 yet?</p>
+      <a class="btn-amazon" href="https://ebooks.aidorzeczy.com" target="_blank" rel="noopener">📖 Get it on Amazon →</a>
+    </div>
   </div>
+
+  <p class="amazon-disclaimer">
+    This page is a free, optional companion to <em>AI Made Simple — Book 2</em> (available on Amazon), provided solely to make copying prompts more convenient. All prompts shown here are also available in full text inside the purchased e-book.
+  </p>
 </div>
 
-<!-- ══ GŁÓWNA TREŚĆ ═══════════════════════════════════════════════════════ -->
+<!-- ══ MAIN CONTENT ═══════════════════════════════════════════════════ -->
 <div id="tresc">
 
 <header>
   <div class="header-glow"></div>
-  <div class="tom-badge">Tom 2 · AI Do Rzeczy</div>
-  <h1>← Wpisz tytuł Tomu 2 →</h1>
-  <p class="subtitle">Leszek Ignatowicz · aidorzeczy.com</p>
+  <div class="tom-badge">Book 2 · AI Made Simple</div>
+  <div class="header-series">AI Made Simple</div>
+  <h1>Book 2: Organisation &amp; Planning.<br>Reclaim 5 hours a week.</h1>
+  <div class="header-tagline">How to stop juggling everything in your head — no tech knowledge required.</div>
+  <div class="header-subtitle-small">A plain-English guide for everyone. · Leszek Ignatowicz · book2.aidorzeczy.com</div>
   <div class="header-tip">
-    <span>💡</span>
-    Kliknij <strong>Kopiuj komendę</strong>, a następnie wklej ją w ChatGPT lub Claude
+    <span class="icon">💡</span>
+    Click <strong>Copy prompt</strong>, then paste it into ChatGPT or Claude
   </div>
 </header>
 
 <nav class="chapter-nav" id="chapNav">
-  <a class="nav-item active" href="#r1" onclick="setActive(this)">← Rozdział 1 →</a>
-  <a class="nav-item" href="#r2" onclick="setActive(this)">← Rozdział 2 →</a>
-  <a class="nav-item" href="#r3" onclick="setActive(this)">← Rozdział 3 →</a>
-  <a class="nav-item" href="#r4" onclick="setActive(this)">← Rozdział 4 →</a>
+  <a class="nav-item active" href="#r1" onclick="setActive(this)">Ch. 1 — Kitchen</a>
+  <a class="nav-item" href="#r2" onclick="setActive(this)">Ch. 2 — Meal Plan</a>
+  <a class="nav-item" href="#r3" onclick="setActive(this)">Ch. 3 — Schedule</a>
+  <a class="nav-item" href="#r4" onclick="setActive(this)">Ch. 4 — Travel</a>
+  <a class="nav-item" href="#r5" onclick="setActive(this)">Ch. 5 — To-Do</a>
+  <div class="nav-sep"></div>
+  <a class="nav-item" href="#cheatsheet" onclick="setActive(this)">Cheat Sheet</a>
+  <a class="nav-item" href="#advanced" onclick="setActive(this)">Advanced</a>
 </nav>
 
 <main>
+
   <div class="progress-bar">
-    <span class="progress-label">Skopiowane komendy:</span>
+    <span class="progress-label">Prompts copied:</span>
     <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-    <span class="progress-count" id="progressCount">0 / 24</span>
+    <span class="progress-count" id="progressCount">0 / 10</span>
   </div>
 
-  <!-- ROZDZIAŁ 1 -->
+  <!-- ═══ CHAPTER 1 ═══ -->
   <section class="chapter" id="r1">
     <div class="chapter-header">
+      <div class="chapter-icon">🍳</div>
       <div class="chapter-info">
-        <h2>← Wpisz nazwę Rozdziału 1 →</h2>
-        <p>Komendy 1–6</p>
+        <h2>Chapter 1: Your Kitchen Assistant</h2>
+        <p>Prompt No. 1 · Get a recipe built around whatever you already have in the fridge</p>
       </div>
     </div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·01</span><span class="komenda-title">← Wpisz nazwę komendy 1 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k01">← Wklej tutaj treść komendy 1. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k01', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·02</span><span class="komenda-title">← Wpisz nazwę komendy 2 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k02">← Wklej tutaj treść komendy 2. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k02', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·03</span><span class="komenda-title">← Wpisz nazwę komendy 3 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k03">← Wklej tutaj treść komendy 3. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k03', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·04</span><span class="komenda-title">← Wpisz nazwę komendy 4 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k04">← Wklej tutaj treść komendy 4. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k04', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·05</span><span class="komenda-title">← Wpisz nazwę komendy 5 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k05">← Wklej tutaj treść komendy 5. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k05', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·06</span><span class="komenda-title">← Wpisz nazwę komendy 6 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k06">← Wklej tutaj treść komendy 6. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k06', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
+    <div class="komenda-card">
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 1</span>
+          <span class="komenda-title">Recipe from what I have — dinner sorted in 30 minutes</span>
+        </div>
+      </div>
+      <div class="komenda-body">
+        <div class="komenda-tekst" id="k1">Act as an experienced home cook.
+
+Based on the ingredients I have at home, suggest a specific recipe for tonight's dinner.
+
+Keep it simple — maximum 30 minutes from start to plate.
+
+Give me: the name of the dish, a list of ingredients with quantities, and numbered cooking steps.
+
+Ingredients I have: [List what's in your fridge or cupboards, e.g. chicken breast, rice, onion, garlic, tinned tomatoes]
+
+Number of people: [e.g. 2 / family of 4]
+
+What we don't eat or want to avoid: [e.g. no spicy food / no dairy / we don't like fish — or type: no restrictions]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k1', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- ROZDZIAŁ 2 -->
+  <!-- ═══ CHAPTER 2 ═══ -->
   <section class="chapter" id="r2">
-    <div class="chapter-header"><div class="chapter-info"><h2>← Wpisz nazwę Rozdziału 2 →</h2><p>Komendy 7–12</p></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·07</span><span class="komenda-title">← Wpisz nazwę komendy 7 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k07">← Wklej tutaj treść komendy 7. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k07', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·08</span><span class="komenda-title">← Wpisz nazwę komendy 8 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k08">← Wklej tutaj treść komendy 8. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k08', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·09</span><span class="komenda-title">← Wpisz nazwę komendy 9 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k09">← Wklej tutaj treść komendy 9. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k09', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·10</span><span class="komenda-title">← Wpisz nazwę komendy 10 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k10">← Wklej tutaj treść komendy 10. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k10', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·11</span><span class="komenda-title">← Wpisz nazwę komendy 11 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k11">← Wklej tutaj treść komendy 11. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k11', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·12</span><span class="komenda-title">← Wpisz nazwę komendy 12 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k12">← Wklej tutaj treść komendy 12. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k12', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
+    <div class="chapter-header">
+      <div class="chapter-icon">📅</div>
+      <div class="chapter-info">
+        <h2>Chapter 2: The Weekly Meal Planner</h2>
+        <p>Prompt No. 2 · 7-day meal plan plus a ready-to-go shopping list — all in one go</p>
+      </div>
+    </div>
+    <div class="komenda-card">
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 2</span>
+          <span class="komenda-title">Weekly meal plan with shopping list</span>
+        </div>
+      </div>
+      <div class="komenda-body">
+        <div class="komenda-tekst" id="k2">Act as a nutritionist and experienced home cook.
+
+Create a 7-day meal plan for me (Monday through Sunday).
+
+For each day, give me: breakfast, lunch, and dinner.
+
+Keep the meals simple, quick to prepare, and genuinely enjoyable.
+
+After the meal plan, add a combined shopping list for the whole week, grouped by category (vegetables, meat, dairy, dry goods).
+
+Number of people: [e.g. 2 adults / family of 4 with children]
+
+Approximate weekly food budget: [e.g. $100 / $150 / flexible]
+
+What we don't eat or want to avoid: [e.g. no pork / no gluten / we don't like fish — or: no restrictions]
+
+Cuisine style we enjoy: [e.g. Italian, Asian, Mediterranean — or: no preference]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k2', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- ROZDZIAŁ 3 -->
+  <!-- ═══ CHAPTER 3 ═══ -->
   <section class="chapter" id="r3">
-    <div class="chapter-header"><div class="chapter-info"><h2>← Wpisz nazwę Rozdziału 3 →</h2><p>Komendy 13–18</p></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·13</span><span class="komenda-title">← Wpisz nazwę komendy 13 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k13">← Wklej tutaj treść komendy 13. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k13', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·14</span><span class="komenda-title">← Wpisz nazwę komendy 14 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k14">← Wklej tutaj treść komendy 14. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k14', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·15</span><span class="komenda-title">← Wpisz nazwę komendy 15 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k15">← Wklej tutaj treść komendy 15. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k15', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·16</span><span class="komenda-title">← Wpisz nazwę komendy 16 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k16">← Wklej tutaj treść komendy 16. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k16', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·17</span><span class="komenda-title">← Wpisz nazwę komendy 17 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k17">← Wklej tutaj treść komendy 17. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k17', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·18</span><span class="komenda-title">← Wpisz nazwę komendy 18 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k18">← Wklej tutaj treść komendy 18. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k18', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
+    <div class="chapter-header">
+      <div class="chapter-icon">🕐</div>
+      <div class="chapter-info">
+        <h2>Chapter 3: Your Daily Schedule — Sorted</h2>
+        <p>Prompt No. 3 · Turn a chaotic task list into a realistic hour-by-hour plan</p>
+      </div>
+    </div>
+    <div class="komenda-card">
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 3</span>
+          <span class="komenda-title">Daily schedule from tasks in any order</span>
+        </div>
+      </div>
+      <div class="komenda-body">
+        <div class="komenda-tekst" id="k3">Act as a highly efficient personal assistant.
+
+Create a detailed schedule for my day based on the tasks below.
+
+For each task, give me a suggested start time and estimated duration.
+
+Build in breaks and realistic travel time between locations.
+
+Make sure the plan is actually achievable — don't cram everything in.
+
+Time I wake up: [e.g. 7:00 am]
+
+Time I want to wrap everything up by: [e.g. 8:00 pm]
+
+My tasks for today (write them in any order, as messily as you like):
+[e.g. drop the car at the garage, call the doctor's surgery, send an important email, do the grocery shopping, pick up the kids from school at 3:30 pm, make dinner]
+
+Any fixed commitments or blocks I can't move?
+[e.g. work meeting 10:00–11:30 am / or: none, I'm flexible today]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k3', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- ROZDZIAŁ 4 -->
+  <!-- ═══ CHAPTER 4 ═══ -->
   <section class="chapter" id="r4">
-    <div class="chapter-header"><div class="chapter-info"><h2>← Wpisz nazwę Rozdziału 4 →</h2><p>Komendy 19–24</p></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·19</span><span class="komenda-title">← Wpisz nazwę komendy 19 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k19">← Wklej tutaj treść komendy 19. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k19', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·20</span><span class="komenda-title">← Wpisz nazwę komendy 20 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k20">← Wklej tutaj treść komendy 20. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k20', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·21</span><span class="komenda-title">← Wpisz nazwę komendy 21 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k21">← Wklej tutaj treść komendy 21. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k21', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·22</span><span class="komenda-title">← Wpisz nazwę komendy 22 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k22">← Wklej tutaj treść komendy 22. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k22', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·23</span><span class="komenda-title">← Wpisz nazwę komendy 23 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k23">← Wklej tutaj treść komendy 23. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k23', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
-    <div class="komenda-card"><div class="komenda-head"><div class="komenda-label"><span class="komenda-num">K·24</span><span class="komenda-title">← Wpisz nazwę komendy 24 →</span></div></div><div class="komenda-body"><div class="komenda-tekst" id="k24">← Wklej tutaj treść komendy 24. →</div><div class="komenda-actions"><button class="btn-kopiuj" onclick="kopiuj('k24', this)">📋 Kopiuj komendę</button><span class="copy-hint">Ctrl+V lub długie przyciśnięcie → Wklej</span></div></div></div>
+    <div class="chapter-header">
+      <div class="chapter-icon">✈️</div>
+      <div class="chapter-info">
+        <h2>Chapter 4: Your Holiday &amp; Trip Planner</h2>
+        <p>Prompt No. 4 · Full itinerary, packing list, and insider tips — in one conversation</p>
+      </div>
+    </div>
+    <div class="komenda-card">
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 4</span>
+          <span class="komenda-title">Complete trip plan with packing list</span>
+        </div>
+      </div>
+      <div class="komenda-body">
+        <div class="komenda-tekst" id="k4">Act as an experienced travel guide and trip organiser.
+
+Help me plan a trip. Please prepare:
+
+1. A day-by-day itinerary with suggested times
+
+2. The top 5 must-see highlights — with a brief note on each
+
+3. A packing list tailored to the season and type of trip
+
+4. Three practical tips that most tourists miss
+
+Destination: [City, region, or country, e.g. Lisbon / Tuscany / Japan]
+
+Length of trip: [e.g. 3 days / one week]
+
+Who's travelling: [e.g. solo / couple / family with kids aged 6 and 10]
+
+What we enjoy: [e.g. history and museums / active outdoor days / beach and relaxation / great food and local restaurants / wandering through old town streets]
+
+Budget level: [e.g. budget-conscious / mid-range / no restrictions]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k4', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHAPTER 5 ═══ -->
+  <section class="chapter" id="r5">
+    <div class="chapter-header">
+      <div class="chapter-icon">📋</div>
+      <div class="chapter-info">
+        <h2>Chapter 5: Get on Top of Your To-Do List</h2>
+        <p>Prompt No. 5 · Priority table with a concrete next step for every item</p>
+      </div>
+    </div>
+    <div class="komenda-card">
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 5</span>
+          <span class="komenda-title">Priority table with next steps for everything on your mind</span>
+        </div>
+      </div>
+      <div class="komenda-body">
+        <div class="komenda-tekst" id="k5">Act as a highly organised personal assistant.
+
+Help me get on top of everything I need to deal with.
+
+Based on my list, create:
+
+1. A priority table: Urgent & Important / Important but not urgent / Can wait
+
+2. For each item: one concrete "next step" — the single specific action I need to take to move it forward
+
+3. If anything has a hard deadline, flag it clearly with the date
+
+Here's everything on my mind right now (write as messily as you like):
+[e.g. book a dentist appointment, renew car insurance, call back my sister, order new glasses, file my tax return by end of month, fix the leaky kitchen tap]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k5', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHEAT SHEET ═══ -->
+  <section class="chapter" id="cheatsheet">
+    <div class="chapter-header">
+      <div class="chapter-icon">📌</div>
+      <div class="chapter-info">
+        <h2>Cheat Sheet — All Prompts at a Glance</h2>
+        <p>Prompts No. 1–5 in short form · Use the full chapter versions for best results</p>
+      </div>
+    </div>
+    <div class="komenda-card">
+      <div class="komenda-body" style="padding:20px 24px;">
+        <p style="color:var(--muted);font-size:0.88rem;margin-bottom:12px;">These are condensed versions. The full prompts in each chapter give the AI more context and produce better results.</p>
+        <p style="color:var(--white);font-size:0.9rem;margin:0;">
+          <strong>No. 1</strong> — Fridge recipe → Ch. 1 &nbsp;|&nbsp;
+          <strong>No. 2</strong> — Meal plan → Ch. 2 &nbsp;|&nbsp;
+          <strong>No. 3</strong> — Daily schedule → Ch. 3 &nbsp;|&nbsp;
+          <strong>No. 4</strong> — Trip planner → Ch. 4 &nbsp;|&nbsp;
+          <strong>No. 5</strong> — Priority list → Ch. 5
+        </p>
+        <p style="color:var(--muted);font-size:0.85rem;margin-top:12px;">All prompts also available at <a href="https://book2.aidorzeczy.com" style="color:var(--orange);">book2.aidorzeczy.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ADVANCED ═══ -->
+  <section class="chapter" id="advanced">
+    <div class="chapter-header">
+      <div class="chapter-icon">🚀</div>
+      <div class="chapter-info">
+        <h2>Advanced Prompts — Appendix 2</h2>
+        <p>Prompts No. 6–10 · More powerful versions for trickier situations</p>
+      </div>
+    </div>
+
+    <div class="komenda-card">
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 6</span>
+          <span class="komenda-title">Dinner from almost nothing — last-minute, near-empty fridge</span>
+        </div>
+      </div>
+      <div class="komenda-body">
+        <div class="komenda-tekst" id="k6">Act as a genius improvising chef.
+
+I have almost nothing left in the fridge and very little time.
+
+Suggest something quick and genuinely edible — maximum 15 minutes.
+
+If I'm missing something, tell me the best substitute.
+
+What I have: [Even a very short list works, e.g. eggs, pasta, butter, garlic]
+Time available: [e.g. 10–15 minutes]
+Number of people: [e.g. 2]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k6', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="komenda-card">
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 7</span>
+          <span class="komenda-title">Meal plan for a picky eater</span>
+        </div>
+      </div>
+      <div class="komenda-body">
+        <div class="komenda-tekst" id="k7">Act as a paediatric nutritionist with plenty of real-world experience.
+
+Create a weekly meal plan for a picky eater.
+
+Meals should be tasty, nutritious, and take no more than 20 minutes to prepare.
+
+Introduce anything new very gently — the goal is meals they'll actually eat without a fight.
+
+Child's age: [e.g. 7 years old]
+What they like: [e.g. pasta, chips, chicken, apples, yoghurt]
+What they absolutely refuse: [e.g. fish, anything green, soup]
+Weekly food budget: [e.g. $60 / £40]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k7', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="komenda-card">
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 8</span>
+          <span class="komenda-title">Emergency reschedule after the day falls apart</span>
+        </div>
+      </div>
+      <div class="komenda-body">
+        <div class="komenda-tekst" id="k8">Act as a calm, practical crisis assistant.
+
+My day has just been derailed by something unexpected.
+
+Help me rebuild a realistic plan for the rest of the day, salvaging as much of the original schedule as possible.
+
+What happened: [Brief description, e.g. my child is sick and I need to stay home / the car broke down and I've lost transport for the day]
+Current time: [e.g. 11:00 am]
+What absolutely must still happen today: [e.g. pick up a prescription, send an urgent email]
+The rest of my original plan: [List what you had planned]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k8', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="komenda-card">
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 9</span>
+          <span class="komenda-title">Last-minute weekend getaway</span>
+        </div>
+      </div>
+      <div class="komenda-body">
+        <div class="komenda-tekst" id="k9">Act as an expert in spontaneous travel.
+
+We want to get away this weekend — leaving tomorrow.
+
+Suggest a specific destination within about 3 hours of our city and give us a ready-made 2-day plan.
+
+Include: where to stay (budget and comfortable options), where to eat (at least one spot with great local food), what to see and do, and what to throw in a bag.
+
+Our city: [e.g. London / Berlin / New York / Sydney]
+Who's coming: [e.g. couple / family with children]
+What we enjoy: [e.g. nature and hiking / culture and history / relaxation]
+Budget: [e.g. budget-friendly / mid-range]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k9', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="komenda-card">
+      <div class="komenda-head">
+        <div class="komenda-label">
+          <span class="komenda-num">No. 10</span>
+          <span class="komenda-title">The big monthly reset — plan the whole month at once</span>
+        </div>
+      </div>
+      <div class="komenda-body">
+        <div class="komenda-tekst" id="k10">Act as a personal life planner.
+
+Help me plan the month ahead.
+
+Based on my information, create:
+
+1. A prioritised list of everything I need to get done this month
+
+2. A loose week-by-week skeleton (which week for what)
+
+3. The 3 most important things I absolutely cannot let slip through the cracks
+
+Month: [e.g. October 2026]
+Key dates and deadlines: [e.g. dentist on the 8th, sister's birthday on the 22nd, quarterly tax payment due by the 15th]
+Bigger projects or household tasks this month:
+[e.g. redecorate the spare room, organise a birthday party for the kids, sort out pension paperwork]
+What I want to protect for rest and myself:
+[e.g. gym twice a week, one evening per fortnight with no plans]</div>
+        <div class="komenda-actions">
+          <button class="btn-kopiuj" onclick="kopiuj('k10', this)">📋 Copy prompt</button>
+          <span class="copy-hint">Ctrl+V or long-press → Paste</span>
+        </div>
+      </div>
+    </div>
+
   </section>
 
 </main>
 
+<!-- ══ NEWSLETTER & REVIEW ══════════════════════════════════════════════ -->
+<div class="bonus-section">
+
+  <!-- Newsletter -->
+  <div class="bonus-card">
+    <div class="bonus-card-header">
+      <div class="bonus-card-icon">✉️</div>
+      <h3>Join the AI community and get your bonuses</h3>
+    </div>
+    <p>Sign up for my free newsletter to receive updates on new prompts, AI tool news, and upcoming books in the series.</p>
+    <div class="newsletter-form">
+      <input class="newsletter-input" type="email" id="nl2-email" placeholder="Your best email address">
+      <button class="btn-newsletter" id="nl2-btn" onclick="nlSubmit('nl2')">Sign me up →</button>
+    </div>
+    <div id="nl2-msg" style="min-height:18px;margin-top:10px;font-size:0.82rem;"></div>
+    <p style="margin-top:8px;margin-bottom:0;"><small>No spam. Unsubscribe at any time.</small></p>
+  </div>
+
+  <script>
+  async function nlSubmit(id) {
+    const email = document.getElementById(id+'-email').value.trim();
+    const msg   = document.getElementById(id+'-msg');
+    const btn   = document.getElementById(id+'-btn');
+    if (!email || !email.includes('@')) {
+      msg.style.color = '#EF4444';
+      msg.textContent = 'Please enter a valid email address.';
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    msg.textContent = '';
+    try {
+      const r = await fetch('https://formspree.io/f/mkoqlrqa', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, _subject: 'New subscriber — AI Made Simple Newsletter' })
+      });
+      if (r.ok) {
+        msg.style.color = '#22C55E';
+        msg.textContent = '✓ You\'re on the list!';
+        btn.textContent = '✓ Done!';
+        btn.style.background = 'var(--green-dim, #15803D)';
+        document.getElementById(id+'-email').value = '';
+      } else {
+        const d = await r.json();
+        msg.style.color = '#EF4444';
+        msg.textContent = d.errors ? d.errors.map(e=>e.message).join(', ') : 'Something went wrong. Try again.';
+        btn.disabled = false;
+        btn.textContent = 'Sign me up →';
+      }
+    } catch(e) {
+      msg.style.color = '#EF4444';
+      msg.textContent = 'Connection error. Please try again.';
+      btn.disabled = false;
+      btn.textContent = 'Sign me up →';
+    }
+  }
+  </script>
+  <div class="review-card">
+    <h3>Did my prompts make your life easier?</h3>
+    <p>Your opinion is the fuel for this series. If the knowledge in my ebooks saved you time, <span class="highlight">leaving a short, honest review on Amazon takes 30 seconds</span> — and helps me reach more people.</p>
+    <div class="review-buttons">
+      <a class="btn-review" href="LINK_DO_RECENZJI_TOM1_NA_AMAZONIE" target="_blank" rel="noopener">⭐ Review Book 1</a>
+      <a class="btn-review" href="LINK_DO_RECENZJI_TOM2_NA_AMAZONIE" target="_blank" rel="noopener">⭐ Review Book 2</a>
+      <a class="btn-review" href="LINK_DO_RECENZJI_TOM3_NA_AMAZONIE" target="_blank" rel="noopener">⭐ Review Book 3</a>
+    </div>
+  </div>
+
+</div>
+
 <footer>
   <div class="footer-tomy">
-    <a class="footer-tom-link coming" href="https://tom1.aidorzeczy.com">Tom 1</a>
-    <a class="footer-tom-link current" href="#">★ Tom 2 — tu jesteś</a>
-    <a class="footer-tom-link coming" href="https://tom3.aidorzeczy.com">Tom 3 — dostępny wkrótce</a>
+    <a class="footer-tom-link coming" href="https://book1.aidorzeczy.com">Book 1 — Communication &amp; Difficult Emails</a>
+    <a class="footer-tom-link current" href="#">★ Book 2 — you are here</a>
+    <a class="footer-tom-link coming" href="https://book3.aidorzeczy.com">Book 3 — Household Budget</a>
   </div>
-  <p class="footer-copy">AI Do Rzeczy · Leszek Ignatowicz · aidorzeczy.com</p>
+  <p class="footer-copy">AI Made Simple · Leszek Ignatowicz · book2.aidorzeczy.com</p>
+  <p class="amazon-disclaimer" style="max-width:680px;margin:12px auto 0;">This page is a free, optional companion to <em>AI Made Simple — Book 2</em> (available on Amazon), provided solely to make copying prompts more convenient. All prompts shown here are also available in full text inside the purchased e-book.</p>
 </footer>
 
 </div><!-- koniec #tresc -->
@@ -622,24 +1264,28 @@
 <script>
   // ═══════════════════════════════════════════════════════
   // ZMIEŃ TEN KOD NA WŁAŚCIWY PRZED PUBLIKACJĄ
-  // Wpisz go też na ostatniej stronie e-booka Tom 2
+  // Enter this on the last page of Book 2 as well
   // ═══════════════════════════════════════════════════════
-  const POPRAWNY_KOD = 'TOM2-MN3H';
+  // Akceptowane kody (case-insensitive, prefiks opcjonalny)
+  const SUFIKSY = ['MN3H', 'XXXX'];
+  const KLUCZ = 'dostep_book2_en';
 
-  const KLUCZ_SESJI = 'dostep_tom2';
+  function kodPoprawny(wpisany) {
+    const u = wpisany.trim().toUpperCase();
+    return SUFIKSY.some(s => u === s || u === 'BOOK2-' + s);
+  }
 
   function sprawdzKod() {
     const input = document.getElementById('kod-input');
     const errorMsg = document.getElementById('error-msg');
-    const wpisany = input.value.trim().toUpperCase();
 
-    if (wpisany === POPRAWNY_KOD) {
-      // Zapisz w sessionStorage — dostęp trwa do zamknięcia karty
-      sessionStorage.setItem(KLUCZ_SESJI, '1');
+    if (kodPoprawny(input.value)) {
+      // Persystencja — localStorage zachowuje dostęp po zamknięciu przeglądarki
+      localStorage.setItem(KLUCZ, '1');
       odblokuj();
     } else {
       input.classList.add('error');
-      errorMsg.textContent = 'Nieprawidłowy kod. Sprawdź ostatnią stronę e-booka.';
+      errorMsg.textContent = 'Incorrect code. Check the last page of your e-book.';
       setTimeout(() => input.classList.remove('error'), 600);
     }
   }
@@ -649,8 +1295,8 @@
     document.getElementById('tresc').style.display = 'block';
   }
 
-  // Sprawdź czy już odblokowane w tej sesji
-  if (sessionStorage.getItem(KLUCZ_SESJI) === '1') {
+  // Sprawdź persystentny dostęp (localStorage — przeżywa zamknięcie przeglądarki)
+  if (localStorage.getItem(KLUCZ) === '1') {
     odblokuj();
   }
 
@@ -660,7 +1306,7 @@
   });
 
   // ── Kopiowanie ──────────────────────────────────────────
-  const TOTAL = 24;
+  const TOTAL = 10;
   const copied = new Set();
 
   function updateProgress() {
@@ -673,7 +1319,7 @@
     const el = document.getElementById(id);
     if (!el) return;
     const tekst = el.innerText;
-    const resetBtn = () => { btn.textContent = '📋 Kopiuj komendę'; btn.classList.remove('success','error'); };
+    const resetBtn = () => { btn.textContent = '📋 Copy prompt'; btn.classList.remove('success','error'); };
 
     if (!navigator.clipboard) {
       try {
@@ -681,15 +1327,15 @@
         ta.value = tekst; ta.style.position='fixed'; ta.style.opacity='0';
         document.body.appendChild(ta); ta.focus(); ta.select();
         document.execCommand('copy'); document.body.removeChild(ta);
-        btn.textContent = '✓ Skopiowano!'; btn.classList.add('success');
+        btn.textContent = '✓ Copied!'; btn.classList.add('success');
         copied.add(id); updateProgress(); setTimeout(resetBtn, 2500);
-      } catch { btn.textContent='⚠ Błąd'; btn.classList.add('error'); setTimeout(resetBtn,3500); }
+      } catch { btn.textContent='⚠ Error'; btn.classList.add('error'); setTimeout(resetBtn,3500); }
       return;
     }
 
     navigator.clipboard.writeText(tekst)
-      .then(() => { btn.textContent='✓ Skopiowano!'; btn.classList.add('success'); copied.add(id); updateProgress(); setTimeout(resetBtn,2500); })
-      .catch(() => { btn.textContent='⚠ Błąd kopiowania'; btn.classList.add('error'); setTimeout(resetBtn,3000); });
+      .then(() => { btn.textContent='✓ Copied!'; btn.classList.add('success'); copied.add(id); updateProgress(); setTimeout(resetBtn,2500); })
+      .catch(() => { btn.textContent='⚠ Copy failed'; btn.classList.add('error'); setTimeout(resetBtn,3000); });
   }
 
   function setActive(el) {
